@@ -1,0 +1,29 @@
+.font-1-l {
+  font: 400 6rem/1 'Playfair Display SC', Georgia;
+}
+
+.font-2-m {
+  font: 700 1rem/1.75 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+}
+
+.font-3-m {
+  font: 400 1rem/1.75 Helvetica, Arial;
+}
+
+.font-2-s {
+  font: 700 0.875rem/1.5 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .font-1-l {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 330px) {
+  .font-1-l {
+    font-size: 2rem;
+  }
+}

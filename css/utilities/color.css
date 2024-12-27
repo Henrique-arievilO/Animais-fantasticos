@@ -1,0 +1,37 @@
+:root {
+  --color00: #eee4f8;
+  --color01: #8C6EB5;
+  --color02: #3e2e63;
+  --color03: #161124;
+  --color04: #00000020;
+  --color05: #9a7832;
+  --gradient: linear-gradient(45deg, #3e2e63, #8C6EB5);
+}
+
+.color00 {
+  color: var(--color00);
+}
+
+.color01 {
+  color: var(--color01);
+}
+
+.color02 {
+  color: var(--color02);
+}
+
+.color03 {
+  color: var(--color03);
+}
+
+.color04 {
+  color: var(--color04);
+}
+
+.color05 {
+  color: var(--color05);
+}
+
+.gradient {
+  color: var(--gradient);
+}
