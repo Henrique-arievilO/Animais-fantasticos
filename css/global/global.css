@@ -95,6 +95,10 @@ body {
   grid-column: 2;
 }
 
+.listAnimal li img {
+  cursor: pointer;
+}
+
 body::-webkit-scrollbar,
 .listAnimal::-webkit-scrollbar{
   width: 18px;
@@ -167,11 +171,6 @@ body::-webkit-scrollbar-track,
   opacity: 1;
 }
 
-/* .topButton img {
-  width: 50%;
-  margin: 0 auto;
-} */
-
 /* Responsivo */
 @media (max-width: 700px) {
   body {
@@ -197,5 +196,26 @@ body::-webkit-scrollbar-track,
   }
   .copyright {
     margin-bottom: 0;
+  }
+}
+
+/* Interação com o DOM */
+.js .js-tabContent section {
+  display: none;
+}
+
+.js .js-tabContent section.active {
+  display: block !important;
+  animation: showSection .5s forwards;
+}
+
+@keyframes showSection {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
