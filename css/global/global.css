@@ -200,16 +200,17 @@ body::-webkit-scrollbar-track,
 }
 
 /* Interação com o DOM */
+/* Navegação por tab */
 .js .js-tabContent section {
   display: none;
 }
 
 .js .js-tabContent section.active {
   display: block !important;
-  animation: showSection .5s forwards;
+  animation: sideLeft .5s forwards;
 }
 
-@keyframes showSection {
+@keyframes sideLeft {
   from {
     opacity: 0;
     transform: translate3d(-30px, 0, 0);
@@ -219,3 +220,26 @@ body::-webkit-scrollbar-track,
     transform: translate3d(0, 0, 0);
   }
 }
+
+/* Accordion List */
+.js .js-accordionList dd {
+  display: none;
+}
+
+.js-accordionList dt {
+  cursor: pointer;
+}
+
+.js-accordionList dt::after {
+  content: '⤵';
+  margin-left: 10px;
+}
+
+.js-accordionList dt.active::after {
+  content: '⤴';
+}
+
+.js-accordionList dd.active {
+  display: block !important;
+  animation: sideLeft .5s forwards;
+  }
