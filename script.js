@@ -65,4 +65,57 @@ function smoothScroll () {
 }
 smoothScroll();
 
+function scrollAnimation() {
+  const sections = document.querySelectorAll('.js-scroll');
+  
+  if(sections.length){
+    const halfWindow = window.innerHeight * 0.75;
+    
+    function animateScrolling() {
+      sections.forEach((section) => {
+        const topSection = section.getBoundingClientRect().top;
+        const sectionVisible = (topSection - halfWindow) < 0;
+        if(sectionVisible) {
+          section.classList.add(activeClass);
+        } else {
+          section.classList.remove(activeClass);
+        };
+      })
+    }
+    animateScrolling();
+    
+    window.addEventListener('scroll', animateScrolling)
+  }
+}
+scrollAnimation();
+
+function scrollTop() {
+  const topButton = document.querySelector('.topButton');
+
+  function showButton (event) {
+    if(window.innerHeight <= 0) {
+      topButton.classList.remove(activeClass);
+    }else{
+      topButton.classList.add(activeClass);
+    }
+  }
+  document.addEventListener('scroll', showButton);
+
+  
+  function hideButton (event) {
+    if (event.deltaY < 0) {
+      var topButton = document.querySelector('.topButton');
+      topButton.classList.remove(activeClass);
+    }
+  }
+  document.addEventListener('wheel', hideButton);
+  function backToTheTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+  topButton.addEventListener('click', backToTheTop);
+}
+scrollTop();
 

@@ -154,6 +154,11 @@ body::-webkit-scrollbar-track,
 }
 
 .topButton {
+  display: none;
+}
+
+.topButton.active {
+  display: block !important;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -165,10 +170,22 @@ body::-webkit-scrollbar-track,
   background: var(--color02);
   cursor: pointer;
   padding: 20px;
+  animation: sideRight .5s forwards;
 }
 
-.topButton:hover{
-  opacity: 1;
+.topButton.active:hover{
+  opacity: 1 !important;
+}
+
+@keyframes sideRight {
+  from {
+    opacity: 0;
+    transform: translate3d( 30px, 0, 0);
+  }
+  to {
+    opacity: .5;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 /* Responsivo */
@@ -243,3 +260,16 @@ body::-webkit-scrollbar-track,
   display: block !important;
   animation: sideLeft .5s forwards;
   }
+
+  .js .js-scroll {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+    transition: .5s;
+  }
+  
+  .js .js-scroll.active{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  
